@@ -1,5 +1,27 @@
-# terraform-aws-sns
+AWS SNS Topic Terraform module
+=================================
+
 Terraform module which creates SNS resources on AWS
 
+These types of resources are supported:
 
-**WORK IN PROGRESS**
+* [SNS topic](https://www.terraform.io/docs/providers/aws/d/sns_topic.html) 
+
+Usage
+-----
+
+```hcl
+module "sns_topic" {
+  source = "terraform-aws-modules/sns/aws"
+  name  = "my-topic"
+}
+```
+Authors
+-------
+
+Module managed by [Anton Babenko](https://github.com/antonbabenko).
+
+License
+-------
+
+Apache 2 Licensed. See LICENSE for full details.
