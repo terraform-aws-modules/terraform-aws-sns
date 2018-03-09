@@ -2,5 +2,4 @@
 terraform.tfstate
 *.tfstate*
 terraform.tfvars
-provider.tf
 vars.tf
