@@ -13,6 +13,7 @@ Usage
 ```hcl
 module "sns_topic" {
   source = "terraform-aws-modules/sns/aws"
+  
   name  = "my-topic"
 }
 ```
