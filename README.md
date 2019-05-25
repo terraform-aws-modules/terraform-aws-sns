@@ -16,6 +16,12 @@ module "sns_topic" {
 }
 ```
 
+
+## Examples
+
+* [Simple SNS topic](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/simple-sns)
+* [SNS topic with KMS encryption](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/sns-with-kms)
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Inputs
