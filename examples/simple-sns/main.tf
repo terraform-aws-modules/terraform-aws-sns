@@ -19,7 +19,7 @@ module "users_topic_disabled" {
 
   sns_topic_name = "users"
 
-  create = false
+  create_sns_topic = false
 
   tags = {
     Project    = "secret"
