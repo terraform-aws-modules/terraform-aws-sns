@@ -4,7 +4,8 @@ variable "create_sns_topic" {
 }
 
 variable "sns_topic_name" {
-  description = "The name of the SNS topic to create"
+  description = "The name of the SNS topic to create. If omitted, Terraform will assign a random name."
+  default = ""
 }
 
 variable "sns_topic_with_kms" {
@@ -20,4 +21,9 @@ variable "kms_master_key_id" {
 variable "tags" {
   description = "A mapping of tags to assign to all resources"
   default     = {}
+}
+
+variable "policy" {
+  description = "The JSON policy for the SNS topic"
+  default     = ""
 }
