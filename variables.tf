@@ -8,6 +8,16 @@ variable "sns_topic_name" {
   default = ""
 }
 
+variable "policy" {
+  description = "The JSON policy for the SNS topic"
+  default     = ""
+}
+
+variable "delivery_policy" {
+  description = "The JSON delivery policy for the SNS topic"
+  default     = ""
+}
+
 variable "sns_topic_with_kms" {
   description = "Whether to create SNS topic with KMS encryption"
   default     = false
@@ -21,9 +31,4 @@ variable "kms_master_key_id" {
 variable "tags" {
   description = "A mapping of tags to assign to all resources"
   default     = {}
-}
-
-variable "policy" {
-  description = "The JSON policy for the SNS topic"
-  default     = ""
 }

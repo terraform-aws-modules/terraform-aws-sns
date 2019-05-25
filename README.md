@@ -30,7 +30,8 @@ module "sns_topic" {
 |------|-------------|:----:|:-----:|:-----:|
 | create_sns_topic | Whether to create the SNS topic | string | `true` | no |
 | sns_topic_name | The name of the SNS topic to create. . If omitted, Terraform will assign a random name. | string | `` | no |
-| policy | The JSON policy for the SQS queue | string | `` | no |
+| policy | The JSON policy for the SNS topic | string | `` | no |
+| delivery_policy | The JSON delivery policy for the SNS topic | string | `` | no |
 | sns_topic_with_kms | Whether to create SNS topic with KMS encryption | string | `false` | no | 
 | kms_master_key_id | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | string | `` | no |
 | tags | A mapping of tags to assign to all resources | string | `<map>` | no |
