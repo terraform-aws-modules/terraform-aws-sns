@@ -5,7 +5,7 @@ variable "create_sns_topic" {
 
 variable "sns_topic_name" {
   description = "The name of the SNS topic to create. If omitted, Terraform will assign a random name."
-  default = ""
+  default     = ""
 }
 
 variable "policy" {

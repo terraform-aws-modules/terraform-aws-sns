@@ -4,7 +4,6 @@ provider "aws" {
 
 resource "aws_kms_key" "this" {}
 
-
 module "users_topic_with_kms_static" {
   source = "../../"
 
@@ -19,7 +18,6 @@ module "users_topic_with_kms_static" {
     Secure     = "true"
   }
 }
-
 
 module "users_topic_with_kms_dynamic" {
   source = "../../"
