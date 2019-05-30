@@ -33,7 +33,7 @@ module "sns_topic" {
 | policy | The JSON policy for the SNS topic | string | `""` | no |
 | sns\_topic\_name | The name of the SNS topic to create. If omitted, Terraform will assign a random name. | string | `""` | no |
 | sns\_topic\_with\_kms | Whether to create SNS topic with KMS encryption | string | `"false"` | no |
-| tags | A mapping of tags to assign to all resources | map | `<map>` | no |
+| tags | A mapping of tags to assign to all resources | map | `{}` | no |
 
 ## Outputs
 
