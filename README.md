@@ -23,24 +23,23 @@ module "sns_topic" {
 * [SNS topic with KMS encryption](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/sns-with-kms)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| create_sns_topic | Whether to create the SNS topic | string | `true` | no |
-| sns_topic_name | The name of the SNS topic to create. . If omitted, Terraform will assign a random name. | string | `` | no |
-| policy | The JSON policy for the SNS topic | string | `` | no |
-| delivery_policy | The JSON delivery policy for the SNS topic | string | `` | no |
-| sns_topic_with_kms | Whether to create SNS topic with KMS encryption | string | `false` | no | 
-| kms_master_key_id | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | string | `` | no |
-| tags | A mapping of tags to assign to all resources | string | `<map>` | no |
+| create\_sns\_topic | Whether to create the SNS topic | string | `"true"` | no |
+| delivery\_policy | The JSON delivery policy for the SNS topic | string | `""` | no |
+| kms\_master\_key\_id | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | string | `""` | no |
+| policy | The JSON policy for the SNS topic | string | `""` | no |
+| sns\_topic\_name | The name of the SNS topic to create. If omitted, Terraform will assign a random name. | string | `""` | no |
+| sns\_topic\_with\_kms | Whether to create SNS topic with KMS encryption | string | `"false"` | no |
+| tags | A mapping of tags to assign to all resources | map | `<map>` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| this_sns_topic_arn | ARN of SNS topic |
+| this\_sns\_topic\_arn | ARN of SNS topic |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

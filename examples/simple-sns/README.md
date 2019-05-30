@@ -15,11 +15,10 @@ $ terraform apply
 Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| this_sns_topic_arn | The ARN of the SNS topic |
+| this\_sns\_topic\_arn | The ARN of the SNS topic |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
