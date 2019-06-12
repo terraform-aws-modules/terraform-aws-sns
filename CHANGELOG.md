@@ -4,8 +4,9 @@
 
 
 <a name="v2.0.0"></a>
-## [v2.0.0] - 2019-01-18
+## [v2.0.0] - 2019-06-12
 
+- Upgraded module to support Terraform 0.12 ([#4](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/4))
 - Merge pull request [#2](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/2) from kazufumi-nishida-www/patch-1
 - Fix markdown link format
 
