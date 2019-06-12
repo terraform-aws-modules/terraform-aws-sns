@@ -6,15 +6,26 @@ This type of resources are supported:
 
 * [SNS topic](https://www.terraform.io/docs/providers/aws/r/sns_topic.html)
 
+## Terraform versions
+
+Terraform 0.12. Pin module version to `~> v2.0`. Submit pull-requests to `master` branch.
+
+Terraform 0.11. Pin module version to `~> v1.0`. Submit pull-requests to `terraform011` branch.
+
 ## Usage
 
 ```hcl
 module "sns_topic" {
-  source = "terraform-aws-modules/sns/aws"
+  source  = "terraform-aws-modules/sns/aws"
+  version = "~> 2.0"
   
   name  = "my-topic"
 }
 ```
+
+## Examples
+
+* [Complete SNS topics](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/complete)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -23,7 +34,7 @@ module "sns_topic" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | create_sns_topic | Whether to create the SNS topic | string | `true` | no |
-| sns_topic_name | The name of the SNS topic to create | string | - | yes |
+| name | The name of the SNS topic to create | string | - | yes |
 
 ## Outputs
 
