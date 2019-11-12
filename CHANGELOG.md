@@ -3,9 +3,16 @@
 
 
 
+<a name="v2.1.0"></a>
+## [v2.1.0] - 2019-11-12
+
+- Updated pre-commit
+
+
 <a name="v2.0.0"></a>
 ## [v2.0.0] - 2019-06-12
 
+- Updated CHANGELOG
 - Upgraded module to support Terraform 0.12 ([#4](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/4))
 - Merge pull request [#2](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/2) from kazufumi-nishida-www/patch-1
 - Fix markdown link format
@@ -41,7 +48,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.1.0...HEAD
+[v2.1.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v1.1.0...v2.0.0
 [v1.1.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v0.0.2...v1.0.0
