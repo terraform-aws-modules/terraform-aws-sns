@@ -35,6 +35,7 @@ module "sns_topic" {
 |------|-------------|:----:|:-----:|:-----:|
 | create_sns_topic | Whether to create the SNS topic | string | `true` | no |
 | name | The name of the SNS topic to create | string | - | yes |
+| tags | A mapping of tags to assign to all resources | string | `<map>` | no |
 
 ## Outputs
 
