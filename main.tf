@@ -1,3 +1,28 @@
+resource "aws_sns_topic_policy" "this" {
+  arn    = aws_sns_topic.this.arn
+  policy = length(var.policy) > 0 ? var.policy : data.aws_iam_policy_document.this.json
+}
+
+data "aws_iam_policy_document" "this" {
+  statement {
+    effect    = "Allow"
+    actions   = ["sns:Publish"]
+    resources = [aws_sns_topic.this.arn]
+
+    principals {
+      type        = "Service"
+      identifiers = var.allow_publish_aws_services
+    }
+
+    principals {
+      type        = "AWS"
+      identifiers = var.allow_publish_iam_arns
+    }
+  }
+}
+
+
+
 resource "aws_sns_topic" "this" {
   count = var.create_sns_topic ? 1 : 0
 
@@ -5,7 +30,6 @@ resource "aws_sns_topic" "this" {
   name_prefix = var.name_prefix
 
   display_name                             = var.display_name
-  policy                                   = var.policy
   delivery_policy                          = var.delivery_policy
   application_success_feedback_role_arn    = var.application_success_feedback_role_arn
   application_success_feedback_sample_rate = var.application_success_feedback_sample_rate
