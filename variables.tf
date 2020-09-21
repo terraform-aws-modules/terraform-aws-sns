@@ -37,7 +37,7 @@ variable "display_name" {
 variable "policy" {
   description = "The fully-formed AWS policy as JSON"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "delivery_policy" {
