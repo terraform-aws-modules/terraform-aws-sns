@@ -1,21 +1,19 @@
 data "aws_iam_policy_document" "this" {
-  # dont create this if no services or iam arns are specified
-  count = length(concat(var.allow_publish_aws_services, var.allow_publish_iam_arns)) > 0 ? 1 : 0
   statement {
     effect    = "Allow"
     actions   = ["sns:Publish"]
     resources = ["*"]
 
-    dynamic principals {
-      for_each = length(var.allow_publish_aws_services) > 0 ? ["_enable"] : []
+    dynamic "principals" {
+      for_each = length(var.allow_publish_aws_services) > 0 ? [true] : []
       content {
         type        = "Service"
         identifiers = var.allow_publish_aws_services
       }
     }
 
-    dynamic principals {
-      for_each = length(var.allow_publish_iam_arns) > 0 ? ["_enable"] : []
+    dynamic "principals" {
+      for_each = length(var.allow_publish_iam_arns) > 0 ? [true] : []
       content {
         type        = "AWS"
         identifiers = var.allow_publish_iam_arns
@@ -24,7 +22,10 @@ data "aws_iam_policy_document" "this" {
   }
 }
 
-
+locals {
+  # an iam policy doc with an empty `principals` means var.allow_publish_* were empty
+  policy_doc_is_valid = length(data.aws_iam_policy_document.this.statement[0].principals) > 0
+}
 
 resource "aws_sns_topic" "this" {
   count = var.create_sns_topic ? 1 : 0
@@ -33,7 +34,7 @@ resource "aws_sns_topic" "this" {
   name_prefix = var.name_prefix
 
   display_name                             = var.display_name
-  policy                                   = length(var.policy) > 0 ? var.policy : try(data.aws_iam_policy_document.this[0].json, null)
+  policy                                   = local.policy_doc_is_valid ? data.aws_iam_policy_document.this.json : var.policy
   delivery_policy                          = var.delivery_policy
   application_success_feedback_role_arn    = var.application_success_feedback_role_arn
   application_success_feedback_sample_rate = var.application_success_feedback_sample_rate

@@ -42,8 +42,8 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allow\_publish\_aws\_services | Allow these AWS services to publish messages in the topic.  Not used when `policy` variable is specified | `list(string)` | `[]` | no |
-| allow\_publish\_iam\_arns | Allow these IAM users/roles to publish messages in the topic.  Not used when `policy` variable is specified | `list(string)` | `[]` | no |
+| allow\_publish\_aws\_services | Allow these AWS services to publish messages in the topic.  Overrides the `policy` variable | `list(string)` | `[]` | no |
+| allow\_publish\_iam\_arns | Allow these IAM users/roles to publish messages in the topic.  Overrides the `policy` variable | `list(string)` | `[]` | no |
 | application\_failure\_feedback\_role\_arn | IAM role for failure feedback | `string` | `null` | no |
 | application\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | `string` | `null` | no |
 | application\_success\_feedback\_sample\_rate | Percentage of success to sample | `string` | `null` | no |

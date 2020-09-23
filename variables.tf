@@ -1,12 +1,12 @@
 variable "allow_publish_aws_services" {
+  description = "Allow these AWS services to publish messages in the topic.  Overrides the `policy` variable"
   type        = list(string)
-  description = "Allow these AWS services to publish messages in the topic.  Not used when `policy` variable is specified"
   default     = []
 }
 
 variable "allow_publish_iam_arns" {
+  description = "Allow these IAM users/roles to publish messages in the topic.  Overrides the `policy` variable"
   type        = list(string)
-  description = "Allow these IAM users/roles to publish messages in the topic.  Not used when `policy` variable is specified"
   default     = []
 }
 
@@ -37,7 +37,7 @@ variable "display_name" {
 variable "policy" {
   description = "The fully-formed AWS policy as JSON"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "delivery_policy" {
