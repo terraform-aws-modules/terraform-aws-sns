@@ -2,22 +2,28 @@ data "aws_iam_policy_document" "this" {
   # dont create the document if we don't need to (simplify plan output)
   count = var.create_sns_topic ? 1 : 0
 
-  statement {
-    effect    = "Allow"
-    actions   = ["sns:Publish"]
-    resources = ["*"]
+  dynamic "statement" {
+    for_each = length(var.allow_publish_aws_services) > 0 ? [true] : []
+    content {
+      effect    = "Allow"
+      actions   = ["sns:Publish"]
+      resources = ["*"]
 
-    dynamic "principals" {
-      for_each = length(var.allow_publish_aws_services) > 0 ? [true] : []
-      content {
+      principals {
         type        = "Service"
         identifiers = var.allow_publish_aws_services
       }
     }
+  }
 
-    dynamic "principals" {
-      for_each = length(var.allow_publish_iam_arns) > 0 ? [true] : []
-      content {
+  dynamic "statement" {
+    for_each = length(var.allow_publish_iam_arns) > 0 ? [true] : []
+    content {
+      effect    = "Allow"
+      actions   = ["sns:Publish"]
+      resources = ["*"]
+
+      principals {
         type        = "AWS"
         identifiers = var.allow_publish_iam_arns
       }
@@ -26,8 +32,8 @@ data "aws_iam_policy_document" "this" {
 }
 
 locals {
-  # an iam policy doc with an empty `principals` means var.allow_publish_* were empty
-  policy_doc_is_valid = length(data.aws_iam_policy_document.this[0].statement[0].principals) > 0
+  # an iam policy doc with an empty `statement` means var.allow_publish_* were empty
+  policy_doc_is_valid = data.aws_iam_policy_document.this[0].statement != null
 
   # we only want to use our policy doc if it's valid and var.policy is null
   use_policy_doc = local.policy_doc_is_valid && var.policy == null
