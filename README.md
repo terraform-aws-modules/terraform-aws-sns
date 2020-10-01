@@ -28,30 +28,42 @@ module "sns_topic" {
 * [Complete SNS topics](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/complete)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| application\_failure\_feedback\_role\_arn | IAM role for failure feedback | string | `"null"` | no |
-| application\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | string | `"null"` | no |
-| application\_success\_feedback\_sample\_rate | Percentage of success to sample | string | `"null"` | no |
-| create\_sns\_topic | Whether to create the SNS topic | bool | `"true"` | no |
-| delivery\_policy | The SNS delivery policy | string | `"null"` | no |
-| display\_name | The display name for the SNS topic | string | `"null"` | no |
-| http\_failure\_feedback\_role\_arn | IAM role for failure feedback | string | `"null"` | no |
-| http\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | string | `"null"` | no |
-| http\_success\_feedback\_sample\_rate | Percentage of success to sample | string | `"null"` | no |
-| kms\_master\_key\_id | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | string | `"null"` | no |
-| lambda\_failure\_feedback\_role\_arn | IAM role for failure feedback | string | `"null"` | no |
-| lambda\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | string | `"null"` | no |
-| lambda\_success\_feedback\_sample\_rate | Percentage of success to sample | string | `"null"` | no |
-| name | The name of the SNS topic to create | string | `"null"` | no |
-| name\_prefix | The prefix name of the SNS topic to create | string | `"null"` | no |
-| policy | The fully-formed AWS policy as JSON | string | `"null"` | no |
-| sqs\_failure\_feedback\_role\_arn | IAM role for failure feedback | string | `"null"` | no |
-| sqs\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | string | `"null"` | no |
-| sqs\_success\_feedback\_sample\_rate | Percentage of success to sample | string | `"null"` | no |
-| tags | A mapping of tags to assign to all resources | map(string) | `{}` | no |
+|------|-------------|------|---------|:--------:|
+| allow\_publish\_aws\_services | Allow these AWS services to publish messages in the topic.  Not used when `policy` is specified. | `list(string)` | `[]` | no |
+| allow\_publish\_iam\_arns | Allow these IAM users/roles to publish messages in the topic.  Not used when `policy` is specified. | `list(string)` | `[]` | no |
+| application\_failure\_feedback\_role\_arn | IAM role for failure feedback | `string` | `null` | no |
+| application\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | `string` | `null` | no |
+| application\_success\_feedback\_sample\_rate | Percentage of success to sample | `string` | `null` | no |
+| create\_sns\_topic | Whether to create the SNS topic | `bool` | `true` | no |
+| delivery\_policy | The SNS delivery policy | `string` | `null` | no |
+| display\_name | The display name for the SNS topic | `string` | `null` | no |
+| http\_failure\_feedback\_role\_arn | IAM role for failure feedback | `string` | `null` | no |
+| http\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | `string` | `null` | no |
+| http\_success\_feedback\_sample\_rate | Percentage of success to sample | `string` | `null` | no |
+| kms\_master\_key\_id | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | `string` | `null` | no |
+| lambda\_failure\_feedback\_role\_arn | IAM role for failure feedback | `string` | `null` | no |
+| lambda\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | `string` | `null` | no |
+| lambda\_success\_feedback\_sample\_rate | Percentage of success to sample | `string` | `null` | no |
+| name | The name of the SNS topic to create | `string` | `null` | no |
+| name\_prefix | The prefix name of the SNS topic to create | `string` | `null` | no |
+| policy | The fully-formed AWS policy as JSON | `string` | `null` | no |
+| sqs\_failure\_feedback\_role\_arn | IAM role for failure feedback | `string` | `null` | no |
+| sqs\_success\_feedback\_role\_arn | The IAM role permitted to receive success feedback for this topic | `string` | `null` | no |
+| sqs\_success\_feedback\_sample\_rate | Percentage of success to sample | `string` | `null` | no |
+| tags | A mapping of tags to assign to all resources | `map(string)` | `{}` | no |
 
 ## Outputs
 

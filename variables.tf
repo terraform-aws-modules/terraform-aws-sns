@@ -1,3 +1,15 @@
+variable "allow_publish_aws_services" {
+  description = "Allow these AWS services to publish messages in the topic.  Not used when `policy` is specified."
+  type        = list(string)
+  default     = []
+}
+
+variable "allow_publish_iam_arns" {
+  description = "Allow these IAM users/roles to publish messages in the topic.  Not used when `policy` is specified."
+  type        = list(string)
+  default     = []
+}
+
 variable "create_sns_topic" {
   description = "Whether to create the SNS topic"
   type        = bool
