@@ -1,4 +1,7 @@
 data "aws_iam_policy_document" "this" {
+  # dont create the document if we don't need to (simplify plan output)
+  count = var.create_sns_topic ? 1 : 0
+
   statement {
     effect    = "Allow"
     actions   = ["sns:Publish"]
@@ -24,7 +27,10 @@ data "aws_iam_policy_document" "this" {
 
 locals {
   # an iam policy doc with an empty `principals` means var.allow_publish_* were empty
-  policy_doc_is_valid = length(data.aws_iam_policy_document.this.statement[0].principals) > 0
+  policy_doc_is_valid = length(data.aws_iam_policy_document.this[0].statement[0].principals) > 0
+
+  # we only want to use our policy doc if it's valid and var.policy is null
+  use_policy_doc = local.policy_doc_is_valid && var.policy == null
 }
 
 resource "aws_sns_topic" "this" {
@@ -34,7 +40,7 @@ resource "aws_sns_topic" "this" {
   name_prefix = var.name_prefix
 
   display_name                             = var.display_name
-  policy                                   = local.policy_doc_is_valid ? data.aws_iam_policy_document.this.json : var.policy
+  policy                                   = local.use_policy_doc ? data.aws_iam_policy_document.this[0].json : var.policy
   delivery_policy                          = var.delivery_policy
   application_success_feedback_role_arn    = var.application_success_feedback_role_arn
   application_success_feedback_sample_rate = var.application_success_feedback_sample_rate

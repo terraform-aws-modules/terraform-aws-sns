@@ -1,11 +1,11 @@
 variable "allow_publish_aws_services" {
-  description = "Allow these AWS services to publish messages in the topic.  Overrides the `policy` variable"
+  description = "Allow these AWS services to publish messages in the topic.  Not used when `policy` is specified."
   type        = list(string)
   default     = []
 }
 
 variable "allow_publish_iam_arns" {
-  description = "Allow these IAM users/roles to publish messages in the topic.  Overrides the `policy` variable"
+  description = "Allow these IAM users/roles to publish messages in the topic.  Not used when `policy` is specified."
   type        = list(string)
   default     = []
 }
