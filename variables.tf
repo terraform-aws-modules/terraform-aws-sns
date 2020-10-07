@@ -1,3 +1,9 @@
+variable "allow_subscribe_iam_arns" {
+  description = "Allow these IAM users/roles to subscribe to the topic.  Not used when `policy` is specified."
+  type        = list(string)
+  default     = []
+}
+
 variable "create_sns_topic" {
   description = "Whether to create the SNS topic"
   type        = bool
