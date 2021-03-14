@@ -1,6 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+
+<a name="v2.2.0"></a>
+## [v2.2.0] - 2021-03-14
+
+- chore: add ci-cd workflow for pre-commit checks ([#18](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/18))
 
 
 <a name="v2.1.0"></a>
@@ -12,9 +22,7 @@
 <a name="v2.0.0"></a>
 ## [v2.0.0] - 2019-06-12
 
-- Updated CHANGELOG
 - Upgraded module to support Terraform 0.12 ([#4](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/4))
-- Merge pull request [#2](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/2) from kazufumi-nishida-www/patch-1
 - Fix markdown link format
 
 
@@ -28,7 +36,6 @@
 ## [v1.0.0] - 2018-03-12
 
 - Fixed and release
-- Merge pull request [#1](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/1) from mhd999/feat/sns-topic
 - Fix: checkout vars.tf
 - Feat: add license file and fix minor issue
 - Fix: resolve review comments
@@ -48,7 +55,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.2.0...HEAD
+[v2.2.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.1.0...v2.2.0
 [v2.1.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v1.1.0...v2.0.0
 [v1.1.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v1.0.0...v1.1.0
