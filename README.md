@@ -2,16 +2,12 @@
 
 Terraform module which creates SNS resources on AWS
 
-This type of resources are supported:
-
-- [SNS topic](https://www.terraform.io/docs/providers/aws/r/sns_topic.html)
-
 ## Usage
 
 ```hcl
 module "sns_topic" {
   source  = "terraform-aws-modules/sns/aws"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   name  = "my-topic"
 }
@@ -74,7 +70,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this_sns_topic_arn"></a> [this\_sns\_topic\_arn](#output\_this\_sns\_topic\_arn) | ARN of SNS topic |
+| <a name="output_sns_topic_arn"></a> [sns\_topic\_arn](#output\_sns\_topic\_arn) | ARN of SNS topic |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Authors

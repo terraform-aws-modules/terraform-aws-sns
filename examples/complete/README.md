@@ -49,6 +49,6 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_users_encrypted_this_sns_topic_arn"></a> [users\_encrypted\_this\_sns\_topic\_arn](#output\_users\_encrypted\_this\_sns\_topic\_arn) | The ARN of the SNS topic |
-| <a name="output_users_unencrypted_this_sns_topic_arn"></a> [users\_unencrypted\_this\_sns\_topic\_arn](#output\_users\_unencrypted\_this\_sns\_topic\_arn) | The ARN of the SNS topic |
+| <a name="output_users_encrypted_sns_topic_arn"></a> [users\_encrypted\_sns\_topic\_arn](#output\_users\_encrypted\_sns\_topic\_arn) | The ARN of the SNS topic |
+| <a name="output_users_unencrypted_sns_topic_arn"></a> [users\_unencrypted\_sns\_topic\_arn](#output\_users\_unencrypted\_sns\_topic\_arn) | The ARN of the SNS topic |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
