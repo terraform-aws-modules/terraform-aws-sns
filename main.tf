@@ -20,6 +20,7 @@ resource "aws_sns_topic" "this" {
   sqs_success_feedback_sample_rate         = var.sqs_success_feedback_sample_rate
   sqs_failure_feedback_role_arn            = var.sqs_failure_feedback_role_arn
   kms_master_key_id                        = var.kms_master_key_id
+  fifo_topic                               = var.fifo_topic
 
   tags = var.tags
 }

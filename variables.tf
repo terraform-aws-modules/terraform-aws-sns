@@ -112,6 +112,12 @@ variable "kms_master_key_id" {
   default     = null
 }
 
+variable "fifo_topic" {
+  description = "Boolean indicating whether or not to create a FIFO (first-in-first-out) topic"
+  type        = bool
+  default     = false
+}
+
 variable "tags" {
   description = "A mapping of tags to assign to all resources"
   type        = map(string)
