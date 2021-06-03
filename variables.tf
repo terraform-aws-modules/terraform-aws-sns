@@ -117,3 +117,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "fifo_topic" {
+  description = "Boolean indicating whether or not to create a FIFO (first-in-first-out) topic (default is false)."
+  type        = bool
+  default     = false
+}
