@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v3.1.0"></a>
+## [v3.1.0] - 2021-06-03
+
+- feat: Add support for FIFO topic ([#24](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/24))
+- chore: update CI/CD to use stable `terraform-docs` release artifact and discoverable Apache2.0 license ([#22](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/22))
+
+
 <a name="v3.0.0"></a>
 ## [v3.0.0] - 2021-04-27
 
@@ -24,18 +31,6 @@ All notable changes to this project will be documented in this file.
 ## [v2.2.0] - 2021-03-14
 
 - chore: add ci-cd workflow for pre-commit checks ([#18](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/18))
-- Merge pull request [#15](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/15) from terraform-aws-modules/terraform-provider-githubfile-1584635403935463000
-- [ci skip] Create ".chglog/CHANGELOG.tpl.md".
-- Merge pull request [#14](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/14) from terraform-aws-modules/terraform-provider-githubfile-1584537457805098000
-- [ci skip] Create ".editorconfig".
-- Merge pull request [#12](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/12) from terraform-aws-modules/terraform-provider-githubfile-1584537425269104000
-- Merge pull request [#13](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/13) from terraform-aws-modules/terraform-provider-githubfile-1584537425269134000
-- Merge pull request [#9](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/9) from terraform-aws-modules/terraform-provider-githubfile-1584537425269253000
-- Merge pull request [#10](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/10) from terraform-aws-modules/terraform-provider-githubfile-1584537425269131000
-- [ci skip] Create ".gitignore".
-- [ci skip] Create ".pre-commit-config.yaml".
-- [ci skip] Create "Makefile".
-- [ci skip] Create "LICENSE".
 
 
 <a name="v2.1.0"></a>
@@ -48,7 +43,6 @@ All notable changes to this project will be documented in this file.
 ## [v2.0.0] - 2019-06-12
 
 - Upgraded module to support Terraform 0.12 ([#4](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/4))
-- Merge pull request [#2](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/2) from kazufumi-nishida-www/patch-1
 - Fix markdown link format
 
 
@@ -62,7 +56,6 @@ All notable changes to this project will be documented in this file.
 ## [v1.0.0] - 2018-03-12
 
 - Fixed and release
-- Merge pull request [#1](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/1) from mhd999/feat/sns-topic
 - Fix: checkout vars.tf
 - Feat: add license file and fix minor issue
 - Fix: resolve review comments
@@ -82,7 +75,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.1.0...HEAD
+[v3.1.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.0.0...v3.1.0
 [v3.0.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.3.0...v3.0.0
 [v2.3.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.2.0...v2.3.0
 [v2.2.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.1.0...v2.2.0
