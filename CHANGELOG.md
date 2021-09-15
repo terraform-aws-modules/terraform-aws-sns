@@ -5,10 +5,13 @@ All notable changes to this project will be documented in this file.
 <a name="unreleased"></a>
 ## [Unreleased]
 
-<a name="v3.1.1"></a>
-## [v3.1.1] - 2021-09-15
 
-- feat: Enables content-based deduplication for FIFO topics. For more information, see the [related documentation](https://docs.aws.amazon.com/sns/latest/dg/fifo-message-dedup.html)
+
+<a name="v3.2.0"></a>
+## [v3.2.0] - 2021-09-15
+
+- feat: Added content-based deduplication ([#25](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/25))
+
 
 <a name="v3.1.0"></a>
 ## [v3.1.0] - 2021-06-03
@@ -78,8 +81,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.1.1...HEAD
-[v3.1.1]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.1.0...v3.1.1
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.2.0...HEAD
+[v3.2.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.1.0...v3.2.0
 [v3.1.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.0.0...v3.1.0
 [v3.0.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.3.0...v3.0.0
 [v2.3.0]: https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v2.2.0...v2.3.0
