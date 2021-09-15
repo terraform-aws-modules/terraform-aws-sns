@@ -123,3 +123,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "content_based_deduplication" {
+  description = "Boolean indicating whether or not to enable content-based deduplication for FIFO topics."
+  type        = bool
+  default     = false
+}
