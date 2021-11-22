@@ -32,8 +32,8 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_users_encrypted"></a> [users\_encrypted](#module\_users\_encrypted) | ../../ |  |
-| <a name="module_users_unencrypted"></a> [users\_unencrypted](#module\_users\_unencrypted) | ../../ |  |
+| <a name="module_users_encrypted"></a> [users\_encrypted](#module\_users\_encrypted) | ../../ | n/a |
+| <a name="module_users_unencrypted"></a> [users\_unencrypted](#module\_users\_unencrypted) | ../../ | n/a |
 
 ## Resources
 
