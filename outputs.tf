@@ -4,16 +4,16 @@ output "sns_topic_arn" {
 }
 
 output "sns_topic_name" {
-  description = "name of SNS topic"
+  description = "NAME of SNS topic"
   value       = element(concat(aws_sns_topic.this.*.name, [""]), 0)
 }
 
 output "sns_topic_id" {
-  description = "id of SNS topic"
+  description = "ID of SNS topic"
   value       = element(concat(aws_sns_topic.this.*.id, [""]), 0)
 }
 
 output "sns_topic_owner" {
-  description = "owner of SNS topic"
+  description = "OWNER of SNS topic"
   value       = element(concat(aws_sns_topic.this.*.owner, [""]), 0)
 }
