@@ -9,11 +9,11 @@ output "sns_topic_name" {
 }
 
 output "sns_topic_id" {
-  description = "name of SNS topic"
+  description = "id of SNS topic"
   value       = element(concat(aws_sns_topic.this.*.id, [""]), 0)
 }
 
 output "sns_topic_owner" {
-  description = "name of SNS topic"
+  description = "owner of SNS topic"
   value       = element(concat(aws_sns_topic.this.*.owner, [""]), 0)
 }
