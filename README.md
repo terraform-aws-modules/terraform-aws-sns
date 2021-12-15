@@ -73,6 +73,9 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_sns_topic_arn"></a> [sns\_topic\_arn](#output\_sns\_topic\_arn) | ARN of SNS topic |
+| <a name="output_sns_topic_name"></a> [sns\_topic\_name](#output\_sns\_topic\_name) | NAME of SNS topic |
+| <a name="output_sns_topic_id"></a> [sns\_topic\_id](#output\_sns\_topic\_id) | ID of SNS topic |
+| <a name="output_sns_topic_owner"></a> [sns\_topic\_owner](#output\_sns\_topic\_owner) | OWNER of SNS topic |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Authors
