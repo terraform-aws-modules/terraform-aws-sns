@@ -1,3 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+# [3.3.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.2.0...v3.3.0) (2021-12-16)
+
+
+### Bug Fixes
+
+* update CI/CD process to enable auto-release workflow ([#26](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/26)) ([97a7100](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/97a7100685e29a8901365ebff79efeac7225bf36))
+
+
+### Features
+
+* Added outputs sns_topic_name, sns_topic_id, sns_topic_owner ([#27](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/27)) ([e502a5f](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/e502a5f2d71a490d41927fd5c1a84037163388f7))
+
 <a name="v3.2.0"></a>
 ## [v3.2.0] - 2021-09-15
 
