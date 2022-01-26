@@ -4,12 +4,38 @@ Terraform module which creates SNS resources on AWS
 
 ## Usage
 
+**Create the SNS topic:**
+
 ```hcl
 module "sns_topic" {
   source  = "terraform-aws-modules/sns/aws"
   version = "~> 3.0"
 
   name  = "my-topic"
+}
+```
+
+**Create the SNS topic subscription:**
+
+```hcl
+module "sqs_queue" {
+  source  = "terraform-aws-modules/sqs/aws"
+  version = "~> 3.0"
+
+  name = "my-queue"
+}
+
+module "sns_topic" {
+  source  = "terraform-aws-modules/sns/aws"
+  version = "~> 3.0"
+
+  name = "my-topic"
+
+  create_sns_topic_subscription = true
+  endpoint             = module.sqs_queue.sqs_queue_arn
+  protocol             = "sqs"
+  topic_arn            = module.sns_topic.sns_topic_arn
+  raw_message_delivery = true
 }
 ```
 
