@@ -25,3 +25,12 @@ module "users_encrypted" {
     Secure = "true"
   }
 }
+
+module "sqs_subscription" {
+  source = "../../"
+
+  name_prefix             = "users-encrypted-"
+  display_name            = "users-encrypted"
+  create_sqs_subscription = true
+  sqs_endpoint_arn        = "arn:aws:sqs:us-east-1:123456789098:sqs-queue-name"
+}
