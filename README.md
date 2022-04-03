@@ -40,6 +40,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_sns_topic.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
+| [aws_sns_topic_subscription.sqs_subscription](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
 
 ## Inputs
 
@@ -64,7 +65,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | The name of the SNS topic to create | `string` | `null` | no |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | The prefix name of the SNS topic to create | `string` | `null` | no |
 | <a name="input_policy"></a> [policy](#input\_policy) | The fully-formed AWS policy as JSON | `string` | `null` | no |
-| <a name="input_sqs_endpoint_arn"></a> [sqs\_endpoint\_arn](#input\_sqs\_endpoint\_arn) | The ARN of the subscription endpoint. | `string` | n/a | yes |
+| <a name="input_sqs_endpoint_arn"></a> [sqs\_endpoint\_arn](#input\_sqs\_endpoint\_arn) | The ARN of the subscription endpoint. | `string` | `null` | no |
 | <a name="input_sqs_failure_feedback_role_arn"></a> [sqs\_failure\_feedback\_role\_arn](#input\_sqs\_failure\_feedback\_role\_arn) | IAM role for failure feedback | `string` | `null` | no |
 | <a name="input_sqs_success_feedback_role_arn"></a> [sqs\_success\_feedback\_role\_arn](#input\_sqs\_success\_feedback\_role\_arn) | The IAM role permitted to receive success feedback for this topic | `string` | `null` | no |
 | <a name="input_sqs_success_feedback_sample_rate"></a> [sqs\_success\_feedback\_sample\_rate](#input\_sqs\_success\_feedback\_sample\_rate) | Percentage of success to sample | `string` | `null` | no |
