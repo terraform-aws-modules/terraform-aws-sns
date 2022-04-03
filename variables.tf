@@ -132,6 +132,7 @@ variable "content_based_deduplication" {
 
 variable "sqs_endpoint_arn" {
   type        = string
+  default     = null
   description = "The ARN of the subscription endpoint."
 }
 
