@@ -25,3 +25,10 @@ resource "aws_sns_topic" "this" {
 
   tags = var.tags
 }
+
+resource "aws_sns_topic_subscription" "sqs_subscription" {
+  count     = var.create_sqs_subscription ? 1 : 0
+  topic_arn = aws_sns_topic.this.arn
+  protocol  = "sqs"
+  endpoint  = var.sqs_endpoint_arn
+}

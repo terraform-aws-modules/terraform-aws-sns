@@ -129,3 +129,14 @@ variable "content_based_deduplication" {
   type        = bool
   default     = false
 }
+
+variable "sqs_endpoint_arn" {
+  type        = string
+  description = "The ARN of the subscription endpoint."
+}
+
+variable "create_sqs_subscription" {
+  type        = bool
+  default     = false
+  description = "Boolean indicating whether or not to create a subscription."
+}
