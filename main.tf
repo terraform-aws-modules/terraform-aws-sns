@@ -1,9 +1,7 @@
 resource "aws_sns_topic" "this" {
   count = var.create_sns_topic ? 1 : 0
-
   name        = var.name
   name_prefix = var.name_prefix
-
   display_name                             = var.display_name
   policy                                   = var.policy
   delivery_policy                          = var.delivery_policy
@@ -22,6 +20,5 @@ resource "aws_sns_topic" "this" {
   kms_master_key_id                        = var.kms_master_key_id
   fifo_topic                               = var.fifo_topic
   content_based_deduplication              = var.content_based_deduplication
-
   tags = var.tags
 }
