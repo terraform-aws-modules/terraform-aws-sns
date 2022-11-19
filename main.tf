@@ -10,6 +10,9 @@ resource "aws_sns_topic" "this" {
   application_success_feedback_role_arn    = var.application_success_feedback_role_arn
   application_success_feedback_sample_rate = var.application_success_feedback_sample_rate
   application_failure_feedback_role_arn    = var.application_failure_feedback_role_arn
+  firehose_success_feedback_role_arn       = var.firehose_success_feedback_role_arn
+  firehose_success_feedback_sample_rate    = var.firehose_success_feedback_sample_rate
+  firehose_failure_feedback_role_arn       = var.firehose_failure_feedback_role_arn
   http_success_feedback_role_arn           = var.http_success_feedback_role_arn
   http_success_feedback_sample_rate        = var.http_success_feedback_sample_rate
   http_failure_feedback_role_arn           = var.http_failure_feedback_role_arn
