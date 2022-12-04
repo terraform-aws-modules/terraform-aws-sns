@@ -60,7 +60,7 @@ variable "firehose_success_feedback_role_arn" {
 
 variable "firehose_success_feedback_sample_rate" {
   description = "Percentage of success to sample"
-  type        = string
+  type        = number
   default     = null
 }
 
