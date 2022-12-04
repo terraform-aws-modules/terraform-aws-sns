@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v4.0.0...v4.1.0) (2022-12-04)
+
+
+### Features
+
+* Add firehose args ([#35](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/35)) ([eb5b965](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/eb5b96574e9bd0bd6454dedb6e90eeaf3b694fe7))
+
 ## [4.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v3.3.0...v4.0.0) (2022-10-27)
 
 
