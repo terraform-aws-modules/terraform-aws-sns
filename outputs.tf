@@ -4,22 +4,22 @@
 
 output "topic_arn" {
   description = "The ARN of the SNS topic, as a more obvious property (clone of id)"
-  value       = try(aws_sns_topic.this[0].arn, "")
+  value       = try(aws_sns_topic.this[0].arn, null)
 }
 
 output "topic_id" {
   description = "The ARN of the SNS topic"
-  value       = try(aws_sns_topic.this[0].id, "")
+  value       = try(aws_sns_topic.this[0].id, null)
 }
 
 output "topic_name" {
   description = "The name of the topic"
-  value       = try(aws_sns_topic.this[0].name, "")
+  value       = try(aws_sns_topic.this[0].name, null)
 }
 
 output "topic_owner" {
   description = "The AWS Account ID of the SNS topic owner"
-  value       = try(aws_sns_topic.this[0].owner, "")
+  value       = try(aws_sns_topic.this[0].owner, null)
 }
 
 ################################################################################

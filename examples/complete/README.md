@@ -39,13 +39,13 @@ Note that this example may create resources which cost money. Run `terraform des
 | <a name="module_default_sns"></a> [default\_sns](#module\_default\_sns) | ../../ | n/a |
 | <a name="module_disabled_sns"></a> [disabled\_sns](#module\_disabled\_sns) | ../../ | n/a |
 | <a name="module_kms"></a> [kms](#module\_kms) | terraform-aws-modules/kms/aws | n/a |
+| <a name="module_sqs"></a> [sqs](#module\_sqs) | ../../../terraform-aws-sqs | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_sqs_queue.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Inputs

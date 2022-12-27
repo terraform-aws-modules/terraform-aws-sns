@@ -6,12 +6,12 @@ data "aws_caller_identity" "current" {}
 
 locals {
   region = "eu-west-1"
-  name   = "sns-ex-${replace(basename(path.cwd), "_", "-")}"
+  name   = "sns-ex-${basename(path.cwd)}"
 
   tags = {
     Name       = local.name
     Example    = "complete"
-    Repository = "https://github.com/terraform-aws-modules/terraform-aws-sns"
+    Repository = "github.com/terraform-aws-modules/terraform-aws-sns"
   }
 }
 
@@ -22,7 +22,7 @@ locals {
 module "default_sns" {
   source = "../../"
 
-  name = "sns-ex-default"
+  name = "${local.name}-default"
 
   tags = local.tags
 }
@@ -30,7 +30,7 @@ module "default_sns" {
 module "complete_sns" {
   source = "../../"
 
-  name              = "sns-ex-complete-"
+  name              = local.name
   use_name_prefix   = true
   display_name      = "complete"
   kms_master_key_id = module.kms.key_id
@@ -82,7 +82,7 @@ module "complete_sns" {
       conditions = [{
         test     = "StringLike"
         variable = "sns:Endpoint"
-        values   = [aws_sqs_queue.this.arn]
+        values   = [module.sqs.queue_arn]
       }]
     }
   }
@@ -90,7 +90,7 @@ module "complete_sns" {
   subscriptions = {
     sqs = {
       protocol = "sqs"
-      endpoint = aws_sqs_queue.this.arn
+      endpoint = module.sqs.queue_arn
     }
   }
 
@@ -137,7 +137,7 @@ module "disabled_sns" {
 module "kms" {
   source = "terraform-aws-modules/kms/aws"
 
-  aliases     = ["sns/example"]
+  aliases     = ["sns/${local.name}"]
   description = "KMS key to encrypt topic"
 
   # Policy
@@ -159,13 +159,34 @@ module "kms" {
   tags = local.tags
 }
 
-# TODO - replace once SQS module has been updated for policy/etc.
-resource "aws_sqs_queue" "this" {
-  name = "${local.name}.fifo"
+module "sqs" {
+  # TODO - need to update before merging
+  # source = "terraform-aws-modules/sqs/aws"
+  source = "../../../terraform-aws-sqs"
 
-  # Since SNS topic is FIFO
-  fifo_queue                  = true
-  content_based_deduplication = true
+  name       = local.name
+  fifo_queue = true
+
+  create_queue_policy = true
+  queue_policy_statements = {
+    sns = {
+      sid     = "SNS"
+      actions = ["sqs:SendMessage"]
+
+      principals = [
+        {
+          type        = "Service"
+          identifiers = ["sns.amazonaws.com"]
+        }
+      ]
+
+      condition = {
+        test     = "ArnEquals"
+        variable = "aws:SourceArn"
+        values   = [module.complete_sns.topic_arn]
+      }
+    }
+  }
 
   tags = local.tags
 }
