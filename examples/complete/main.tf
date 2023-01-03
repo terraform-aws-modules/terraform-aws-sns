@@ -135,7 +135,8 @@ module "disabled_sns" {
 ################################################################################
 
 module "kms" {
-  source = "terraform-aws-modules/kms/aws"
+  source  = "terraform-aws-modules/kms/aws"
+  version = "~> 1.0"
 
   aliases     = ["sns/${local.name}"]
   description = "KMS key to encrypt topic"
@@ -160,9 +161,8 @@ module "kms" {
 }
 
 module "sqs" {
-  # TODO - need to update before merging
-  # source = "terraform-aws-modules/sqs/aws"
-  source = "../../../terraform-aws-sqs"
+  source  = "terraform-aws-modules/sqs/aws"
+  version = "~> 4.0"
 
   name       = local.name
   fifo_queue = true
