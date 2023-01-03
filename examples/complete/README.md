@@ -1,6 +1,9 @@
 # Complete SNS topic example
 
-Configuration in this directory creates SNS topics.
+Configuration in this directory creates:
+- A simple, default SNS topic
+- A FIFO SNS topic with FIFO SQS subscription; shows most of the supported arguments
+- A disabled SNS topic
 
 ## Usage
 
@@ -20,26 +23,30 @@ Note that this example may create resources which cost money. Run `terraform des
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.40 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.40 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_users_encrypted"></a> [users\_encrypted](#module\_users\_encrypted) | ../../ | n/a |
-| <a name="module_users_unencrypted"></a> [users\_unencrypted](#module\_users\_unencrypted) | ../../ | n/a |
+| <a name="module_complete_sns"></a> [complete\_sns](#module\_complete\_sns) | ../../ | n/a |
+| <a name="module_default_sns"></a> [default\_sns](#module\_default\_sns) | ../../ | n/a |
+| <a name="module_disabled_sns"></a> [disabled\_sns](#module\_disabled\_sns) | ../../ | n/a |
+| <a name="module_kms"></a> [kms](#module\_kms) | terraform-aws-modules/kms/aws | ~> 1.0 |
+| <a name="module_sqs"></a> [sqs](#module\_sqs) | terraform-aws-modules/sqs/aws | ~> 4.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_kms_key.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
+| [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Inputs
 
@@ -49,6 +56,14 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_users_encrypted_sns_topic_arn"></a> [users\_encrypted\_sns\_topic\_arn](#output\_users\_encrypted\_sns\_topic\_arn) | The ARN of the SNS topic |
-| <a name="output_users_unencrypted_sns_topic_arn"></a> [users\_unencrypted\_sns\_topic\_arn](#output\_users\_unencrypted\_sns\_topic\_arn) | The ARN of the SNS topic |
+| <a name="output_complete_sns_subscriptions"></a> [complete\_sns\_subscriptions](#output\_complete\_sns\_subscriptions) | Map of subscriptions created and their attributes |
+| <a name="output_complete_sns_topic_arn"></a> [complete\_sns\_topic\_arn](#output\_complete\_sns\_topic\_arn) | The ARN of the SNS topic, as a more obvious property (clone of id) |
+| <a name="output_complete_sns_topic_id"></a> [complete\_sns\_topic\_id](#output\_complete\_sns\_topic\_id) | The ARN of the SNS topic |
+| <a name="output_complete_sns_topic_name"></a> [complete\_sns\_topic\_name](#output\_complete\_sns\_topic\_name) | The name of the topic |
+| <a name="output_complete_sns_topic_owner"></a> [complete\_sns\_topic\_owner](#output\_complete\_sns\_topic\_owner) | The AWS Account ID of the SNS topic owner |
+| <a name="output_default_sns_subscriptions"></a> [default\_sns\_subscriptions](#output\_default\_sns\_subscriptions) | Map of subscriptions created and their attributes |
+| <a name="output_default_sns_topic_arn"></a> [default\_sns\_topic\_arn](#output\_default\_sns\_topic\_arn) | The ARN of the SNS topic, as a more obvious property (clone of id) |
+| <a name="output_default_sns_topic_id"></a> [default\_sns\_topic\_id](#output\_default\_sns\_topic\_id) | The ARN of the SNS topic |
+| <a name="output_default_sns_topic_name"></a> [default\_sns\_topic\_name](#output\_default\_sns\_topic\_name) | The name of the topic |
+| <a name="output_default_sns_topic_owner"></a> [default\_sns\_topic\_owner](#output\_default\_sns\_topic\_owner) | The AWS Account ID of the SNS topic owner |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
