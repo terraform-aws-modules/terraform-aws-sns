@@ -77,7 +77,7 @@ module "sns_topic" {
 module "sns_topic" {
   source  = "terraform-aws-modules/sns/aws"
 
-  name  = "fifo"
+  name  = "my-topic"
 
   # SQS queue must be FIFO as well
   fifo_topic                  = true
