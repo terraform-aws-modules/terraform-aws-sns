@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v4.1.0...v5.0.0) (2023-01-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add support for SNS topic filtering, subscriptions, and topic policy creation (#36)
+
+### Features
+
+* Add support for SNS topic filtering, subscriptions, and topic policy creation ([#36](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/36)) ([707b407](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/707b407f0cfb37aee2dc99f9a2e693c5845d503a))
+
+
+### Bug Fixes
+
+* Use a version for  to avoid GitHub API rate limiting on CI workflows ([#39](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/39)) ([117400e](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/117400e7d35562a6e911e77eb2e6eb05e32ac5a0))
+
 ## [4.1.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v4.0.0...v4.1.0) (2022-12-04)
 
 
