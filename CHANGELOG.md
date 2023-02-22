@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.0.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.0.0...v5.0.1) (2023-02-22)
+
+
+### Bug Fixes
+
+* Attach external topic policy when `create_topic_policy` is `false` ([#41](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/41)) ([bc40f51](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/bc40f510681a8e04362d4a41e552b72cd9a913d0))
+
 ## [5.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v4.1.0...v5.0.0) (2023-01-03)
 
 
