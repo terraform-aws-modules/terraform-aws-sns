@@ -33,7 +33,7 @@ resource "aws_sns_topic" "this" {
   lambda_success_feedback_role_arn    = try(var.lambda_feedback.success_role_arn, null)
   lambda_success_feedback_sample_rate = try(var.lambda_feedback.success_sample_rate, null)
 
-  policy = var.create_topic_policy ? var.topic_policy : null
+  policy = var.create_topic_policy ? null : var.topic_policy
 
   sqs_failure_feedback_role_arn    = try(var.sqs_feedback.failure_role_arn, null)
   sqs_success_feedback_role_arn    = try(var.sqs_feedback.success_role_arn, null)
