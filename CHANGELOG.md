@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.0.1...v5.1.0) (2023-02-25)
+
+
+### Features
+
+* Add support for signature version ([#42](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/42)) ([b7d59e3](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/b7d59e3d0c46232fb956e7ba7a6be1c200dee966))
+
 ### [5.0.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.0.0...v5.0.1) (2023-02-22)
 
 
