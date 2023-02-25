@@ -122,6 +122,12 @@ variable "sqs_feedback" {
   # }
 }
 
+variable "signature_version" {
+  description = "If SignatureVersion should be 1 (SHA1) or 2 (SHA256). The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS."
+  type        = number
+  default     = null
+}
+
 ################################################################################
 # Topic Policy
 ################################################################################
