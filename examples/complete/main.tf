@@ -22,7 +22,8 @@ locals {
 module "default_sns" {
   source = "../../"
 
-  name = "${local.name}-default"
+  name              = "${local.name}-default"
+  signature_version = 2
 
   tags = local.tags
 }

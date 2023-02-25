@@ -18,6 +18,7 @@ resource "aws_sns_topic" "this" {
   delivery_policy             = var.delivery_policy
   display_name                = var.display_name
   fifo_topic                  = var.fifo_topic
+  signature_version           = var.fifo_topic ? null : var.signature_version
 
   firehose_failure_feedback_role_arn    = try(var.firehose_feedback.failure_role_arn, null)
   firehose_success_feedback_role_arn    = try(var.firehose_feedback.success_role_arn, null)
