@@ -26,4 +26,5 @@ module "wrapper" {
   topic_policy_statements         = try(each.value.topic_policy_statements, var.defaults.topic_policy_statements, {})
   create_subscription             = try(each.value.create_subscription, var.defaults.create_subscription, true)
   subscriptions                   = try(each.value.subscriptions, var.defaults.subscriptions, {})
+  data_protection_policy          = try(each.value.data_protection_policy, var.defaults.data_protection_policy, null)
 }
