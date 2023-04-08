@@ -160,7 +160,8 @@ resource "aws_sns_topic_subscription" "this" {
 ################################################################################
 
 resource "aws_sns_topic_data_protection_policy" "this" {
-  count  = var.create && var.data_protection_policy != null && !var.fifo_topic ? 1 : 0
+  count = var.create && var.data_protection_policy != null && !var.fifo_topic ? 1 : 0
+
   arn    = aws_sns_topic.this[0].arn
   policy = var.data_protection_policy
 }
