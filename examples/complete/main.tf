@@ -31,7 +31,7 @@ module "default_sns" {
       Name        = "DenyInboundEmailAdressPolicy"
       Statement = [
         {
-          "DataDirection" = "Outbound"
+          "DataDirection" = "Inbound"
           "DataIdentifier" = [
             "arn:aws:dataprotection::aws:data-identifier/EmailAddress",
           ]
