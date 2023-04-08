@@ -177,3 +177,13 @@ variable "subscriptions" {
   type        = any
   default     = {}
 }
+
+################################################################################
+# Data Protection Policy
+################################################################################
+
+variable "data_protection_policy" {
+  description = "A map of data protection policy statements"
+  type        = string
+  default     = null
+}
