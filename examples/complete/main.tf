@@ -27,11 +27,11 @@ module "default_sns" {
 
   data_protection_policy = jsonencode(
     {
-      Description = "Test"
-      Name        = "Test"
+      Description = "Deny Inbound Address"
+      Name        = "DenyInboundEmailAdressPolicy"
       Statement = [
         {
-          "DataDirection" = "Inbound"
+          "DataDirection" = "Outbound"
           "DataIdentifier" = [
             "arn:aws:dataprotection::aws:data-identifier/EmailAddress",
           ]
@@ -41,7 +41,7 @@ module "default_sns" {
           "Principal" = [
             "*",
           ]
-          "Sid" = "Deny"
+          "Sid" = "DenyInboundEmailAddress"
         },
       ]
       Version = "2021-06-01"
