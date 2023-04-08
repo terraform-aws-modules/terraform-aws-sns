@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.1.0...v5.2.0) (2023-04-08)
+
+
+### Features
+
+* Add data protection policy support ([#43](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/43)) ([a4d89d3](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/a4d89d3281b3d9bcc70e731e652944501fe4dc8d))
+
 ## [5.1.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.0.1...v5.1.0) (2023-02-25)
 
 
