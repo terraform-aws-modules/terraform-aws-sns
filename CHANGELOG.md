@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.2.0...v5.3.0) (2023-04-10)
+
+
+### Features
+
+* Add support for tracing_config ([#44](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/44)) ([76a3b48](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/76a3b481e6f7376a6af7df7f02e552d9b5683b38))
+
 ## [5.2.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.1.0...v5.2.0) (2023-04-08)
 
 
