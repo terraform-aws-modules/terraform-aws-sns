@@ -128,6 +128,12 @@ variable "signature_version" {
   default     = null
 }
 
+variable "tracing_config" {
+  description = "Tracing mode of an Amazon SNS topic. Valid values: PassThrough, Active. (default: PassThrough)"
+  type        = string
+  default     = "PassThrough"
+}
+
 ################################################################################
 # Topic Policy
 ################################################################################
