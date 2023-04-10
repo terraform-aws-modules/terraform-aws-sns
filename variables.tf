@@ -131,7 +131,7 @@ variable "signature_version" {
 variable "tracing_config" {
   description = "Tracing mode of an Amazon SNS topic. Valid values: PassThrough, Active."
   type        = string
-  default     = "PassThrough"
+  default     = null
 }
 
 ################################################################################
