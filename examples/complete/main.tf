@@ -58,6 +58,7 @@ module "complete_sns" {
   use_name_prefix   = true
   display_name      = "complete"
   kms_master_key_id = module.kms.key_id
+  tracing_config    = "Active"
 
   # SQS queue must be FIFO as well
   fifo_topic                  = true
