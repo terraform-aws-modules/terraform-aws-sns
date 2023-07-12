@@ -28,5 +28,5 @@ output "topic_owner" {
 
 output "subscriptions" {
   description = "Map of subscriptions created and their attributes"
-  value       = aws_sns_topic_subscription.this
+  value       = module.subscriptions.subscription
 }
