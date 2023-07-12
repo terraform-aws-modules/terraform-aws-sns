@@ -140,7 +140,9 @@ resource "aws_sns_topic_policy" "this" {
 # Subscription(s)
 ################################################################################
 
-resource "aws_sns_topic_subscription" "this" {
+module "subscriptions"{
+  source = "./modules/subscription"
+    
   for_each = { for k, v in var.subscriptions : k => v if var.create && var.create_subscription }
 
   confirmation_timeout_in_minutes = try(each.value.confirmation_timeout_in_minutes, null)
