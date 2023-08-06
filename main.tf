@@ -63,7 +63,6 @@ data "aws_iam_policy_document" "this" {
         "sns:Subscribe",
         "sns:SetTopicAttributes",
         "sns:RemovePermission",
-        "sns:Receive",
         "sns:Publish",
         "sns:ListSubscriptionsByTopic",
         "sns:GetTopicAttributes",
