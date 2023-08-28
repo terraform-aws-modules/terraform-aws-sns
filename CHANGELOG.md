@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.4.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.3.0...v5.4.0) (2023-08-28)
+
+
+### Features
+
+* Remove deprecated policy action  ([#47](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/47)) ([7320f20](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/7320f20294e400322a892e7d71c144458b3416d7))
+
 ## [5.3.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.2.0...v5.3.0) (2023-04-10)
 
 
