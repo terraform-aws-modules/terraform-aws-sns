@@ -82,6 +82,14 @@ module "complete_sns" {
     }
   })
 
+  # Example config for archive_policy for SNS FIFO message archiving
+  # You can not delete a topic with an active message archive policy
+  # You must first deactivate the topic before it can be deleted
+  # https://docs.aws.amazon.com/sns/latest/dg/message-archiving-and-replay-topic-owner.html
+  # archive_policy = jsonencode({
+  # "MessageRetentionPeriod": 30
+  # })
+
   create_topic_policy         = true
   enable_default_topic_policy = true
   topic_policy_statements = {
@@ -116,6 +124,13 @@ module "complete_sns" {
     sqs = {
       protocol = "sqs"
       endpoint = module.sqs.queue_arn
+
+      # example of replay_policy for SNS FIFO message replay
+      # https://docs.aws.amazon.com/sns/latest/dg/message-archiving-and-replay-subscriber.html
+      # replay_policy = jsonencode({
+      #   "PointType": "Timestamp"
+      #   "StartingPoint": timestamp()
+      # })
     }
   }
 

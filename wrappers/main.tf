@@ -20,6 +20,7 @@ module "wrapper" {
   sqs_feedback                    = try(each.value.sqs_feedback, var.defaults.sqs_feedback, {})
   signature_version               = try(each.value.signature_version, var.defaults.signature_version, null)
   tracing_config                  = try(each.value.tracing_config, var.defaults.tracing_config, null)
+  archive_policy                  = try(each.value.archive_policy, var.defaults.archive_policy, null)
   create_topic_policy             = try(each.value.create_topic_policy, var.defaults.create_topic_policy, true)
   source_topic_policy_documents   = try(each.value.source_topic_policy_documents, var.defaults.source_topic_policy_documents, [])
   override_topic_policy_documents = try(each.value.override_topic_policy_documents, var.defaults.override_topic_policy_documents, [])

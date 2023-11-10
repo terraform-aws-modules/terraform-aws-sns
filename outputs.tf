@@ -22,6 +22,11 @@ output "topic_owner" {
   value       = try(aws_sns_topic.this[0].owner, null)
 }
 
+output "topic_beginning_archive_time" {
+  description = "The oldest timestamp at which a FIFO topic subscriber can start a replay"
+  value       = try(aws_sns_topic.this[0].beginning_archive_time, null)
+}
+
 ################################################################################
 # Subscription(s)
 ################################################################################

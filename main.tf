@@ -41,6 +41,8 @@ resource "aws_sns_topic" "this" {
   sqs_success_feedback_role_arn    = try(var.sqs_feedback.success_role_arn, null)
   sqs_success_feedback_sample_rate = try(var.sqs_feedback.success_sample_rate, null)
 
+  archive_policy = try(var.archive_policy, null)
+
   tags = var.tags
 }
 
@@ -151,6 +153,7 @@ resource "aws_sns_topic_subscription" "this" {
   protocol                        = each.value.protocol
   raw_message_delivery            = try(each.value.raw_message_delivery, null)
   redrive_policy                  = try(each.value.redrive_policy, null)
+  replay_policy                   = try(each.value.replay_policy, null)
   subscription_role_arn           = try(each.value.subscription_role_arn, null)
   topic_arn                       = aws_sns_topic.this[0].arn
 }
