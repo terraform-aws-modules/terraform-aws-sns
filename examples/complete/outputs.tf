@@ -22,6 +22,11 @@ output "default_sns_topic_owner" {
   value       = module.default_sns.topic_owner
 }
 
+output "default_sns_topic_beginning_archive_time" {
+  description = "The oldest timestamp at which a FIFO topic subscriber can start a replay"
+  value       = module.default_sns.topic_beginning_archive_time
+}
+
 output "default_sns_subscriptions" {
   description = "Map of subscriptions created and their attributes"
   value       = module.default_sns.subscriptions
@@ -49,6 +54,11 @@ output "complete_sns_topic_name" {
 output "complete_sns_topic_owner" {
   description = "The AWS Account ID of the SNS topic owner"
   value       = module.complete_sns.topic_owner
+}
+
+output "complete_sns_topic_beginning_archive_time" {
+  description = "The oldest timestamp at which a FIFO topic subscriber can start a replay"
+  value       = module.complete_sns.topic_beginning_archive_time
 }
 
 output "complete_sns_subscriptions" {

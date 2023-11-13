@@ -134,6 +134,12 @@ variable "tracing_config" {
   default     = null
 }
 
+variable "archive_policy" {
+  description = "The message archive policy for FIFO topics."
+  type        = string
+  default     = null
+}
+
 ################################################################################
 # Topic Policy
 ################################################################################
