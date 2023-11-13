@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.4.0...v6.0.0) (2023-11-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add `archive_policy` and `replay_policy` configurations and v5 upgrade (#50)
+
+### Features
+
+* Add `archive_policy` and `replay_policy` configurations and v5 upgrade ([#50](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/50)) ([30e89b9](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/30e89b92b6c7e34e4ace30cf2eeeeab2be119cc1))
+
 ## [5.4.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.3.0...v5.4.0) (2023-08-28)
 
 
