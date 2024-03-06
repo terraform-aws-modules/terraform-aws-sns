@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.0.0...v6.0.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* Update CI workflow versions to remove deprecated runtime warnings ([#51](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/51)) ([367df2e](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/367df2e89d649c09170958bcdd31f8573550a5e6))
+
 ## [6.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v5.4.0...v6.0.0) (2023-11-13)
 
 
