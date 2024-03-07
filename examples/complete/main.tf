@@ -220,11 +220,13 @@ module "sqs" {
         }
       ]
 
-      condition = {
-        test     = "ArnEquals"
-        variable = "aws:SourceArn"
-        values   = [module.complete_sns.topic_arn]
-      }
+      conditions = [
+        {
+          test     = "ArnEquals"
+          variable = "aws:SourceArn"
+          values   = [module.complete_sns.topic_arn]
+        }
+      ]
     }
   }
 
