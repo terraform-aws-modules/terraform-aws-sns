@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.1.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.0.1...v6.1.0) (2024-07-05)
+
+
+### Features
+
+* Automatically append .fifo to fifo topic names ([#55](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/55)) ([cfd23c1](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/cfd23c1ab21892f4e87b559f905071325452d709))
+
 ## [6.0.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.0.0...v6.0.1) (2024-03-06)
 
 
