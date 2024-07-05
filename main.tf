@@ -4,11 +4,15 @@ data "aws_caller_identity" "current" {}
 # Topic
 ################################################################################
 
+locals {
+  name = try(trimsuffix(var.name, ".fifo"), "")
+}
+
 resource "aws_sns_topic" "this" {
   count = var.create ? 1 : 0
 
-  name        = var.use_name_prefix ? null : var.name
-  name_prefix = var.use_name_prefix ? var.name : null
+  name        = var.use_name_prefix ? null : (var.fifo_topic ? "${local.name}.fifo" : local.name)
+  name_prefix = var.use_name_prefix ? "${local.name}-" : null
 
   application_failure_feedback_role_arn    = try(var.application_feedback.failure_role_arn, null)
   application_success_feedback_role_arn    = try(var.application_feedback.success_role_arn, null)
