@@ -129,7 +129,7 @@ module "sns_topic" {
 
 - [Complete](https://github.com/terraform-aws-modules/terraform-aws-sns/tree/master/examples/complete)
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -199,7 +199,7 @@ No modules.
 | <a name="output_topic_id"></a> [topic\_id](#output\_topic\_id) | The ARN of the SNS topic |
 | <a name="output_topic_name"></a> [topic\_name](#output\_topic\_name) | The name of the topic |
 | <a name="output_topic_owner"></a> [topic\_owner](#output\_topic\_owner) | The AWS Account ID of the SNS topic owner |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 
 ## Authors
 
