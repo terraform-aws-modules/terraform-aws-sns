@@ -17,7 +17,7 @@ $ terraform apply
 
 Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -68,4 +68,4 @@ No inputs.
 | <a name="output_default_sns_topic_id"></a> [default\_sns\_topic\_id](#output\_default\_sns\_topic\_id) | The ARN of the SNS topic |
 | <a name="output_default_sns_topic_name"></a> [default\_sns\_topic\_name](#output\_default\_sns\_topic\_name) | The name of the topic |
 | <a name="output_default_sns_topic_owner"></a> [default\_sns\_topic\_owner](#output\_default\_sns\_topic\_owner) | The AWS Account ID of the SNS topic owner |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
