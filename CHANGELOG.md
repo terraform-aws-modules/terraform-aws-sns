@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.1.2](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.1.1...v6.1.2) (2024-12-20)
+
+
+### Bug Fixes
+
+* SID must only include alphanumeric characters ([#60](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/60)) ([e4c5800](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/e4c5800d8a4e10d1b4163b0c08fb2a7b9176fb32))
+
 ## [6.1.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.1.0...v6.1.1) (2024-10-11)
 
 
