@@ -64,7 +64,7 @@ data "aws_iam_policy_document" "this" {
     for_each = var.enable_default_topic_policy ? [1] : []
 
     content {
-      sid = "__default_statement_ID"
+      sid = "DefaultStatementID"
       actions = [
         "sns:Subscribe",
         "sns:SetTopicAttributes",
