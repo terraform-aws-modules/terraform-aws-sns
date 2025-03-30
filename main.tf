@@ -86,7 +86,7 @@ data "aws_iam_policy_document" "this" {
       condition {
         test     = "StringEquals"
         values   = [data.aws_caller_identity.current.account_id]
-        variable = "AWS:SourceOwner"
+        variable = "AWS:SourceAccount"
       }
     }
   }
