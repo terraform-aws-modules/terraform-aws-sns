@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.1.3](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.1.2...v6.1.3) (2025-04-08)
+
+
+### Bug Fixes
+
+* Change default policy from deprecated `SourceOwner` to `SourceAccount` ([#61](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/61)) ([05748cf](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/05748cfebf61c02ce08b2cc56bf1dc43fcc4823a))
+
 ## [6.1.2](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.1.1...v6.1.2) (2024-12-20)
 
 
