@@ -62,6 +62,7 @@ module "complete_sns" {
 
   # SQS queue must be FIFO as well
   fifo_topic                  = true
+  fifo_throughput_scope       = "MessageGroup"
   content_based_deduplication = true
 
   delivery_policy = jsonencode({

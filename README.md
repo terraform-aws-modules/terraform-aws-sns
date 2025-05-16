@@ -135,13 +135,13 @@ module "sns_topic" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.25 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.98 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.25 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.98 |
 
 ## Modules
 
@@ -172,6 +172,7 @@ No modules.
 | <a name="input_delivery_policy"></a> [delivery\_policy](#input\_delivery\_policy) | The SNS delivery policy | `string` | `null` | no |
 | <a name="input_display_name"></a> [display\_name](#input\_display\_name) | The display name for the SNS topic | `string` | `null` | no |
 | <a name="input_enable_default_topic_policy"></a> [enable\_default\_topic\_policy](#input\_enable\_default\_topic\_policy) | Specifies whether to enable the default topic policy. Defaults to `true` | `bool` | `true` | no |
+| <a name="input_fifo_throughput_scope"></a> [fifo\_throughput\_scope](#input\_fifo\_throughput\_scope) | Enables higher throughput for FIFO topics by adjusting the scope of deduplication. This attribute has two possible values, Topic and MessageGroup | `string` | `null` | no |
 | <a name="input_fifo_topic"></a> [fifo\_topic](#input\_fifo\_topic) | Boolean indicating whether or not to create a FIFO (first-in-first-out) topic | `bool` | `false` | no |
 | <a name="input_firehose_feedback"></a> [firehose\_feedback](#input\_firehose\_feedback) | Map of IAM role ARNs and sample rate for success and failure feedback | `map(string)` | `{}` | no |
 | <a name="input_http_feedback"></a> [http\_feedback](#input\_http\_feedback) | Map of IAM role ARNs and sample rate for success and failure feedback | `map(string)` | `{}` | no |
