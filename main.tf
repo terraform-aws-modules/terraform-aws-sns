@@ -21,6 +21,7 @@ resource "aws_sns_topic" "this" {
   content_based_deduplication = var.content_based_deduplication
   delivery_policy             = var.delivery_policy
   display_name                = var.display_name
+  fifo_throughput_scope       = var.fifo_throughput_scope
   fifo_topic                  = var.fifo_topic
   signature_version           = var.fifo_topic ? null : var.signature_version
   tracing_config              = var.tracing_config

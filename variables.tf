@@ -56,6 +56,12 @@ variable "display_name" {
   default     = null
 }
 
+variable "fifo_throughput_scope" {
+  description = "Enables higher throughput for FIFO topics by adjusting the scope of deduplication. This attribute has two possible values, Topic and MessageGroup"
+  type        = string
+  default     = null
+}
+
 variable "fifo_topic" {
   description = "Boolean indicating whether or not to create a FIFO (first-in-first-out) topic"
   type        = bool

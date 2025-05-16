@@ -13,6 +13,7 @@ module "wrapper" {
   delivery_policy                 = try(each.value.delivery_policy, var.defaults.delivery_policy, null)
   display_name                    = try(each.value.display_name, var.defaults.display_name, null)
   enable_default_topic_policy     = try(each.value.enable_default_topic_policy, var.defaults.enable_default_topic_policy, true)
+  fifo_throughput_scope           = try(each.value.fifo_throughput_scope, var.defaults.fifo_throughput_scope, null)
   fifo_topic                      = try(each.value.fifo_topic, var.defaults.fifo_topic, false)
   firehose_feedback               = try(each.value.firehose_feedback, var.defaults.firehose_feedback, {})
   http_feedback                   = try(each.value.http_feedback, var.defaults.http_feedback, {})
