@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.2.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.1.3...v6.2.0) (2025-05-16)
+
+
+### Features
+
+* FIFO throughput scope ([#63](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/63)) ([c6df608](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/c6df60873794a699d308a073ccf3d44ae8a8e338))
+
 ## [6.1.3](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.1.2...v6.1.3) (2025-04-08)
 
 
