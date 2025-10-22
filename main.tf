@@ -48,6 +48,8 @@ resource "aws_sns_topic" "this" {
 
   archive_policy = try(var.archive_policy, null)
 
+  region = var.region
+
   tags = var.tags
 }
 
@@ -140,6 +142,8 @@ resource "aws_sns_topic_policy" "this" {
 
   arn    = aws_sns_topic.this[0].arn
   policy = data.aws_iam_policy_document.this[0].json
+
+  region = var.region
 }
 
 ################################################################################
@@ -161,6 +165,8 @@ resource "aws_sns_topic_subscription" "this" {
   replay_policy                   = try(each.value.replay_policy, null)
   subscription_role_arn           = try(each.value.subscription_role_arn, null)
   topic_arn                       = aws_sns_topic.this[0].arn
+
+  region = var.region
 }
 
 ################################################################################
@@ -172,4 +178,6 @@ resource "aws_sns_topic_data_protection_policy" "this" {
 
   arn    = aws_sns_topic.this[0].arn
   policy = var.data_protection_policy
+
+  region = var.region
 }

@@ -21,6 +21,7 @@ module "wrapper" {
   lambda_feedback                 = try(each.value.lambda_feedback, var.defaults.lambda_feedback, {})
   name                            = try(each.value.name, var.defaults.name, null)
   override_topic_policy_documents = try(each.value.override_topic_policy_documents, var.defaults.override_topic_policy_documents, [])
+  region                          = try(each.value.region, var.defaults.region, null)
   signature_version               = try(each.value.signature_version, var.defaults.signature_version, null)
   source_topic_policy_documents   = try(each.value.source_topic_policy_documents, var.defaults.source_topic_policy_documents, [])
   sqs_feedback                    = try(each.value.sqs_feedback, var.defaults.sqs_feedback, {})
