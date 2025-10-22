@@ -6,12 +6,12 @@ data "aws_caller_identity" "current" {}
 
 locals {
   region = "eu-west-1"
-  name   = "sns-ex-${basename(path.cwd)}"
+  name   = "ex-${basename(path.cwd)}"
 
   tags = {
     Name       = local.name
-    Example    = "complete"
-    Repository = "github.com/terraform-aws-modules/terraform-aws-sns"
+    Example    = local.name
+    Repository = "https://github.com/terraform-aws-modules/terraform-aws-sns"
   }
 }
 
@@ -113,7 +113,7 @@ module "complete_sns" {
         identifiers = ["*"]
       }]
 
-      conditions = [{
+      condition = [{
         test     = "StringLike"
         variable = "sns:Endpoint"
         values   = [module.sqs.queue_arn]
@@ -177,7 +177,7 @@ module "disabled_sns" {
 
 module "kms" {
   source  = "terraform-aws-modules/kms/aws"
-  version = "~> 1.0"
+  version = "~> 4.0"
 
   aliases     = ["sns/${local.name}"]
   description = "KMS key to encrypt topic"
@@ -251,26 +251,27 @@ resource "aws_iam_role" "this" {
     ]
   })
 
-  inline_policy {
-    name = local.name
-
-    policy = jsonencode({
-      Version = "2012-10-17"
-      Statement = [
-        {
-          Action = [
-            "logs:CreateLogGroup",
-            "logs:CreateLogStream",
-            "logs:PutLogEvents",
-            "logs:PutMetricFilter",
-            "logs:PutRetentionPolicy",
-          ]
-          Effect   = "Allow"
-          Resource = "*"
-        },
-      ]
-    })
-  }
-
   tags = local.tags
+}
+
+resource "aws_iam_role_policy" "this" {
+  name = local.name
+  role = aws_iam_role.this.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:PutMetricFilter",
+          "logs:PutRetentionPolicy",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
 }
