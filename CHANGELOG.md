@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.2.1...v7.0.0) (2025-10-22)
+
+### ⚠ BREAKING CHANGES
+
+* Upgrade AWS provider and min required Terraform version to `6.9` and `1.5.7` respectively (#68)
+
+### Features
+
+* Upgrade AWS provider and min required Terraform version to `6.9` and `1.5.7` respectively ([#68](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/68)) ([f9269fb](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/f9269fba9aceb1f215771386356a115b37a1e223))
+
 ## [6.2.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.2.0...v6.2.1) (2025-10-21)
 
 ### Bug Fixes
