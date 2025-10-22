@@ -4,6 +4,12 @@ variable "create" {
   default     = true
 }
 
+variable "region" {
+  description = "Region where the resource(s) will be managed. Defaults to the Region set in the provider configuration"
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)
@@ -28,18 +34,16 @@ variable "use_name_prefix" {
 
 variable "application_feedback" {
   description = "Map of IAM role ARNs and sample rate for success and failure feedback"
-  type        = map(string)
-  default     = {}
-  # Example:
-  # application_feedback = {
-  #   failure_role_arn = "arn:aws:iam::11111111111:role/failure"
-  #   success_role_arn = "arn:aws:iam::11111111111:role/success"
-  #   success_sample_rate = 75
-  # }
+  type = object({
+    failure_role_arn    = optional(string)
+    success_role_arn    = optional(string)
+    success_sample_rate = optional(number)
+  })
+  default = {}
 }
 
 variable "content_based_deduplication" {
-  description = "Boolean indicating whether or not to enable content-based deduplication for FIFO topics."
+  description = "Boolean indicating whether or not to enable content-based deduplication for FIFO topics"
   type        = bool
   default     = false
 }
@@ -70,26 +74,22 @@ variable "fifo_topic" {
 
 variable "firehose_feedback" {
   description = "Map of IAM role ARNs and sample rate for success and failure feedback"
-  type        = map(string)
-  default     = {}
-  # Example:
-  # application_feedback = {
-  #   failure_role_arn = "arn:aws:iam::11111111111:role/failure"
-  #   success_role_arn = "arn:aws:iam::11111111111:role/success"
-  #   success_sample_rate = 75
-  # }
+  type = object({
+    failure_role_arn    = optional(string)
+    success_role_arn    = optional(string)
+    success_sample_rate = optional(number)
+  })
+  default = {}
 }
 
 variable "http_feedback" {
   description = "Map of IAM role ARNs and sample rate for success and failure feedback"
-  type        = map(string)
-  default     = {}
-  # Example:
-  # application_feedback = {
-  #   failure_role_arn = "arn:aws:iam::11111111111:role/failure"
-  #   success_role_arn = "arn:aws:iam::11111111111:role/success"
-  #   success_sample_rate = 75
-  # }
+  type = object({
+    failure_role_arn    = optional(string)
+    success_role_arn    = optional(string)
+    success_sample_rate = optional(number)
+  })
+  default = {}
 }
 
 variable "kms_master_key_id" {
@@ -100,14 +100,12 @@ variable "kms_master_key_id" {
 
 variable "lambda_feedback" {
   description = "Map of IAM role ARNs and sample rate for success and failure feedback"
-  type        = map(string)
-  default     = {}
-  # Example:
-  # application_feedback = {
-  #   failure_role_arn = "arn:aws:iam::11111111111:role/failure"
-  #   success_role_arn = "arn:aws:iam::11111111111:role/success"
-  #   success_sample_rate = 75
-  # }
+  type = object({
+    failure_role_arn    = optional(string)
+    success_role_arn    = optional(string)
+    success_sample_rate = optional(number)
+  })
+  default = {}
 }
 
 variable "topic_policy" {
@@ -118,30 +116,28 @@ variable "topic_policy" {
 
 variable "sqs_feedback" {
   description = "Map of IAM role ARNs and sample rate for success and failure feedback"
-  type        = map(string)
-  default     = {}
-  # Example:
-  # application_feedback = {
-  #   failure_role_arn = "arn:aws:iam::11111111111:role/failure"
-  #   success_role_arn = "arn:aws:iam::11111111111:role/success"
-  #   success_sample_rate = 75
-  # }
+  type = object({
+    failure_role_arn    = optional(string)
+    success_role_arn    = optional(string)
+    success_sample_rate = optional(number)
+  })
+  default = {}
 }
 
 variable "signature_version" {
-  description = "If SignatureVersion should be 1 (SHA1) or 2 (SHA256). The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS."
+  description = "If SignatureVersion should be `1` (`SHA1`) or `2` (`SHA256`). The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS"
   type        = number
   default     = null
 }
 
 variable "tracing_config" {
-  description = "Tracing mode of an Amazon SNS topic. Valid values: PassThrough, Active."
+  description = "Tracing mode of an Amazon SNS topic. Valid values: `PassThrough`, `Active`"
   type        = string
   default     = null
 }
 
 variable "archive_policy" {
-  description = "The message archive policy for FIFO topics."
+  description = "The message archive policy for FIFO topics"
   type        = string
   default     = null
 }
@@ -176,8 +172,28 @@ variable "enable_default_topic_policy" {
 
 variable "topic_policy_statements" {
   description = "A map of IAM policy [statements](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document#statement) for custom permission usage"
-  type        = any
-  default     = {}
+  type = map(object({
+    sid           = optional(string)
+    actions       = optional(list(string))
+    not_actions   = optional(list(string))
+    effect        = optional(string, "Allow")
+    resources     = optional(list(string))
+    not_resources = optional(list(string))
+    principals = optional(list(object({
+      type        = string
+      identifiers = list(string)
+    })))
+    not_principals = optional(list(object({
+      type        = string
+      identifiers = list(string)
+    })))
+    condition = optional(list(object({
+      test     = string
+      variable = string
+      values   = list(string)
+    })))
+  }))
+  default = null
 }
 
 ################################################################################
@@ -192,8 +208,20 @@ variable "create_subscription" {
 
 variable "subscriptions" {
   description = "A map of subscription definitions to create"
-  type        = any
-  default     = {}
+  type = map(object({
+    confirmation_timeout_in_minutes = optional(number)
+    delivery_policy                 = optional(string)
+    endpoint                        = string
+    endpoint_auto_confirms          = optional(bool)
+    filter_policy                   = optional(string)
+    filter_policy_scope             = optional(string)
+    protocol                        = string
+    raw_message_delivery            = optional(bool)
+    redrive_policy                  = optional(string)
+    replay_policy                   = optional(string)
+    subscription_role_arn           = optional(string)
+  }))
+  default = {}
 }
 
 ################################################################################
