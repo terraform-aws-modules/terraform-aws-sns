@@ -203,7 +203,7 @@ module "kms" {
 
 module "sqs" {
   source  = "terraform-aws-modules/sqs/aws"
-  version = "~> 4.0"
+  version = "~> 5.0"
 
   name       = local.name
   fifo_queue = true

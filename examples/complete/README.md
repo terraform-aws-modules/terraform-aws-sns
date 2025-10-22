@@ -40,7 +40,7 @@ Note that this example may create resources which cost money. Run `terraform des
 | <a name="module_default_sns"></a> [default\_sns](#module\_default\_sns) | ../../ | n/a |
 | <a name="module_disabled_sns"></a> [disabled\_sns](#module\_disabled\_sns) | ../../ | n/a |
 | <a name="module_kms"></a> [kms](#module\_kms) | terraform-aws-modules/kms/aws | ~> 4.0 |
-| <a name="module_sqs"></a> [sqs](#module\_sqs) | terraform-aws-modules/sqs/aws | ~> 4.0 |
+| <a name="module_sqs"></a> [sqs](#module\_sqs) | terraform-aws-modules/sqs/aws | ~> 5.0 |
 
 ## Resources
 
