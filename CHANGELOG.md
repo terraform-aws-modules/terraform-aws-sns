@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.1.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v7.0.0...v7.1.0) (2026-01-08)
+
+### Features
+
+* Add provider meta user-agent ([#69](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/69)) ([2e97cb3](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/2e97cb337726a11ee1892662d728cb4bb7ffaab6))
+
 ## [7.0.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v6.2.1...v7.0.0) (2025-10-22)
 
 ### ⚠ BREAKING CHANGES
