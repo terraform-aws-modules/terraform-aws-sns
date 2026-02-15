@@ -49,7 +49,7 @@ module "sns_topic" {
         identifiers = ["*"]
       }]
 
-      conditions = [{
+      condition = [{
         test     = "StringLike"
         variable = "sns:Endpoint"
         values   = ["arn:aws:sqs:eu-west-1:11111111111:subscriber"]
@@ -103,7 +103,7 @@ module "sns_topic" {
         identifiers = ["*"]
       }]
 
-      conditions = [{
+      condition = [{
         test     = "StringLike"
         variable = "sns:Endpoint"
         values   = ["arn:aws:sqs:eu-west-1:11111111111:subscriber.fifo"]
