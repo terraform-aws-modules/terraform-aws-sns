@@ -22,20 +22,20 @@ Note that this example may create resources which cost money. Run `terraform des
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.28 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.28 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_complete_sns"></a> [complete\_sns](#module\_complete\_sns) | ../../ | n/a |
 | <a name="module_default_sns"></a> [default\_sns](#module\_default\_sns) | ../../ | n/a |
 | <a name="module_disabled_sns"></a> [disabled\_sns](#module\_disabled\_sns) | ../../ | n/a |
@@ -45,7 +45,7 @@ Note that this example may create resources which cost money. Run `terraform des
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
@@ -57,7 +57,7 @@ No inputs.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_complete_sns_subscriptions"></a> [complete\_sns\_subscriptions](#output\_complete\_sns\_subscriptions) | Map of subscriptions created and their attributes |
 | <a name="output_complete_sns_topic_arn"></a> [complete\_sns\_topic\_arn](#output\_complete\_sns\_topic\_arn) | The ARN of the SNS topic, as a more obvious property (clone of id) |
 | <a name="output_complete_sns_topic_beginning_archive_time"></a> [complete\_sns\_topic\_beginning\_archive\_time](#output\_complete\_sns\_topic\_beginning\_archive\_time) | The oldest timestamp at which a FIFO topic subscriber can start a replay |
