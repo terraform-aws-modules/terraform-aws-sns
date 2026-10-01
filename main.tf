@@ -44,6 +44,8 @@ resource "aws_sns_topic" "this" {
   lambda_success_feedback_role_arn    = var.lambda_feedback.success_role_arn
   lambda_success_feedback_sample_rate = var.lambda_feedback.success_sample_rate
 
+  maximum_message_size = var.maximum_message_size
+
   policy = var.create_topic_policy ? null : var.topic_policy
 
   sqs_failure_feedback_role_arn    = var.sqs_feedback.failure_role_arn

@@ -135,13 +135,13 @@ module "sns_topic" {
 | Name | Version |
 | ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.28 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.67 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.28 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.67 |
 
 ## Modules
 
@@ -178,6 +178,7 @@ No modules.
 | <a name="input_http_feedback"></a> [http\_feedback](#input\_http\_feedback) | Map of IAM role ARNs and sample rate for success and failure feedback | <pre>object({<br/>    failure_role_arn    = optional(string)<br/>    success_role_arn    = optional(string)<br/>    success_sample_rate = optional(number)<br/>  })</pre> | `{}` | no |
 | <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK | `string` | `null` | no |
 | <a name="input_lambda_feedback"></a> [lambda\_feedback](#input\_lambda\_feedback) | Map of IAM role ARNs and sample rate for success and failure feedback | <pre>object({<br/>    failure_role_arn    = optional(string)<br/>    success_role_arn    = optional(string)<br/>    success_sample_rate = optional(number)<br/>  })</pre> | `{}` | no |
+| <a name="input_maximum_message_size"></a> [maximum\_message\_size](#input\_maximum\_message\_size) | The maximum size, in bytes, of a message that can be published to the topic. Valid values are 1024 to 1048576 (1 MiB). The default is 262144 (256 KiB). A topic with a maximum\_message\_size above 256 KiB must have 100 or fewer subscriptions, and each subscription must be an Amazon SQS, Amazon Data Firehose, or AWS Lambda subscription | `number` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the SNS topic to create | `string` | `null` | no |
 | <a name="input_override_topic_policy_documents"></a> [override\_topic\_policy\_documents](#input\_override\_topic\_policy\_documents) | List of IAM policy documents that are merged together into the exported document. In merging, statements with non-blank `sid`s will override statements with the same `sid` | `list(string)` | `[]` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region where the resource(s) will be managed. Defaults to the Region set in the provider configuration | `string` | `null` | no |
