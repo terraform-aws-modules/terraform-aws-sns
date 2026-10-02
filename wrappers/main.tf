@@ -19,6 +19,7 @@ module "wrapper" {
   http_feedback                   = try(each.value.http_feedback, var.defaults.http_feedback, {})
   kms_master_key_id               = try(each.value.kms_master_key_id, var.defaults.kms_master_key_id, null)
   lambda_feedback                 = try(each.value.lambda_feedback, var.defaults.lambda_feedback, {})
+  maximum_message_size            = try(each.value.maximum_message_size, var.defaults.maximum_message_size, null)
   name                            = try(each.value.name, var.defaults.name, null)
   override_topic_policy_documents = try(each.value.override_topic_policy_documents, var.defaults.override_topic_policy_documents, [])
   region                          = try(each.value.region, var.defaults.region, null)

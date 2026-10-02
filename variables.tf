@@ -108,6 +108,12 @@ variable "lambda_feedback" {
   default = {}
 }
 
+variable "maximum_message_size" {
+  description = "The maximum size, in bytes, of a message that can be published to the topic. Valid values are 1024 to 1048576 (1 MiB). The default is 262144 (256 KiB). A topic with a maximum_message_size above 256 KiB must have 100 or fewer subscriptions, and each subscription must be an Amazon SQS, Amazon Data Firehose, or AWS Lambda subscription"
+  type        = number
+  default     = null
+}
+
 variable "topic_policy" {
   description = "An externally created fully-formed AWS policy as JSON"
   type        = string
