@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.2.0](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v7.1.1...v7.2.0) (2026-10-02)
+
+### Features
+
+* Support SNS Topic `maximum_message_size` ([#73](https://github.com/terraform-aws-modules/terraform-aws-sns/issues/73)) ([40effed](https://github.com/terraform-aws-modules/terraform-aws-sns/commit/40effed8601191489b75d0d5773c3ddc5c601e6d))
+
 ## [7.1.1](https://github.com/terraform-aws-modules/terraform-aws-sns/compare/v7.1.0...v7.1.1) (2026-08-06)
 
 ### Bug Fixes
